@@ -2,11 +2,11 @@
 use PHPMailer\PHPMailer\PHPMailer;
 require 'vendor/autoload.php';
 
-require_once 'ClassAutoLoad.php'; // loads PHPMailer, configs, etc.
+require_once 'ClassAutoLoad.php'; 
 require_once 'conf.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // 1. Get form values
+    // 1. Getting  form values
     $name  = $_POST['name'] ?? '';
     $email = $_POST['email'] ?? '';
     $pass  = $_POST['password'] ?? '';
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->close();
     $mysqli->close();
 
-    // 5. Send verification email
+    // 5. Sending verification email
     $verifyLink = $conf['site_url'] . "/verify.php?token=$token&email=" . urlencode($email);
 
     $mail = new PHPMailer(true);
