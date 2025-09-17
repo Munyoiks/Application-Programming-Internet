@@ -1,5 +1,5 @@
 <?php
-namespace MyStandard\.hidden;
+namespace MyStandard\Hidden;
 
 use MyStandard\DummySniff;
 
